@@ -7,9 +7,10 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4",
+    "@sap/cds-hana": "^2",
     "@sap/xssec": "^3",
-    "@sap/cds-hana": "^2"
+    "capjs-remote": "github:Deutsche-Boerse/capjs-remote",
+    "express": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -26,6 +27,13 @@
         "kind": "sqlite",
         "credentials": {
           "url": "db/my-bookshop.sqlite"
+        }
+      },
+      "API_REMOTE": {
+        "kind": "odata",
+        "model": "db/data-model",
+        "credentials": {
+          "url": "http://localhost:4010/remote"
         }
       },
       "[production]": {
